@@ -8,7 +8,7 @@ __author__ = 'ChBuehlmann'
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description='This Script translates sage 50 beam NT CSV Files from Sophisweb to Banana CSV')
+        description='This Script translates sage 50 beam NT CSV Files from Sophisweb to Banana CSV (to be imported as txt file)')
     parser.add_argument('-i', '--input', help='Input file name, file has to include the Headers', required=True)
     return parser.parse_args()
 
@@ -34,7 +34,7 @@ def rewrite_date(datum_):
 
 def main():
     args = parse_args()
-    transform(args.input, args.input.replace('.csv', '_BANANA.csv'))
+    transform(args.input, args.input.replace('.csv', '_BANANA.txt'))
     print("Done.")
 
 
